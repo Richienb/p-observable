@@ -1,9 +1,19 @@
 "use strict"
 
-module.exports = (input, { postfix = "rainbows" } = {}) => {
-	if (typeof input !== "string") {
-		throw new TypeError(`Expected a string, got ${typeof input}`)
+module.exports = observable => new Promise((resolve, reject) => {
+	const onNext = value => {
+		subscribed.unsubscribe()
+		resolve(value)
 	}
 
-	return `${input} & ${postfix}`
-}
+	const onError = error => {
+		subscribed.unsubscribe()
+		reject(error)
+	}
+
+	const onComplete = () => {
+		resolve()
+	}
+
+	const subscribed = observable.subscribe(onNext, onError, onComplete)
+})

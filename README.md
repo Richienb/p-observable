@@ -1,41 +1,33 @@
-# the-module [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/the-module/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/the-module)
+# p-observable [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/p-observable/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/p-observable)
 
-My awesome module.
+Promisify an observable by subscribing to it.
 
-[![NPM Badge](https://nodei.co/npm/the-module.png)](https://npmjs.com/package/the-module)
+[![NPM Badge](https://nodei.co/npm/p-observable.png)](https://npmjs.com/package/p-observable)
 
 ## Install
 
 ```sh
-npm install the-module
+npm install p-observable
 ```
 
 ## Usage
 
 ```js
-const theModule = require("the-module");
+const pObservable = require("p-observable");
 
-theModule("unicorns");
-//=> 'unicorns & rainbows'
+(async () => {
+	const result = await pObservable(observable);
+
+	console.log(result);
+})();
 ```
 
 ## API
 
-### theModule(input, options?)
+### pObservable(observable)
 
-#### input
+#### observable
 
-Type: `string`
+Type: `observable`
 
-Lorem ipsum.
-
-#### options
-
-Type: `object`
-
-##### postfix
-
-Type: `string`\
-Default: `rainbows`
-
-Lorem ipsum.
+The observable to promisify.

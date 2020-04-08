@@ -1,15 +1,19 @@
+import { ObservableLike } from "type-fest" // eslint-disable-line import/no-unresolved
+
 /**
-My awesome module.
-@param input Lorem ipsum.
-@param postfix Lorem ipsum.
+Promisify an observable by subscribing to it.
+@param observable The observable to promisify.
 @example
 ```
-const theModule = require("the-module");
+const pObservable = require("p-observable");
 
-theModule("unicorns");
-//=> 'unicorns & rainbows'
+(async () => {
+	const result = await pObservable(observable);
+
+	console.log(result);
+})();
 ```
 */
-declare function theModule(input: string, { postfix }: { postfix?: string }): string
+declare function pObservable<ReturnType = unknown>(observable: ObservableLike): Promise<ReturnType>
 
-export = theModule
+export = pObservable

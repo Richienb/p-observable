@@ -1,8 +1,8 @@
 {
-	"name": "the-module",
+	"name": "p-observable",
 	"version": "0.0.0",
-	"description": "My awesome module.",
-	"repository": "https://github.com/Richienb/the-module.git",
+	"description": "Promisify an observable by subscribing to it.",
+	"repository": "https://github.com/Richienb/p-observable.git",
 	"author": "Richie Bendall <richiebendall@gmail.com>",
 	"license": "MIT",
 	"main": "index.js",
@@ -17,10 +17,19 @@
 		"lint": "xo",
 		"test": "yarn lint && ava"
 	},
-	"keywords": [],
-	"dependencies": {},
+	"keywords": [
+		"observable",
+		"promise",
+		"await",
+		"next",
+		"data"
+	],
+	"dependencies": {
+		"type-fest": "^0.13.0"
+	},
 	"devDependencies": {
 		"ava": "^3.5.2",
+		"core-js-pure": "^3.6.4",
 		"eslint-config-richienb": "^0.4.2",
 		"xo": "^0.28.1"
 	},
