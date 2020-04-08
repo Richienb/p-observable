@@ -1,6 +1,6 @@
 {
 	"name": "p-observable",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "Promisify an observable by subscribing to it.",
 	"repository": "https://github.com/Richienb/p-observable.git",
 	"author": "Richie Bendall <richiebendall@gmail.com>",
